@@ -1,0 +1,7 @@
+# Local dev stuff.
+.DS_Store
+.idea
+
+# Composer stuff.
+composer.lock
+vendor
