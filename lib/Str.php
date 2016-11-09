@@ -35,4 +35,52 @@ class Str {
         return $string;
     }
 
+    /**
+     * Check if a given string starts with a given
+     * substring.
+     *
+     * @param string $string
+     * @param string $subString
+     * @param bool $caseSensitive
+     *
+     * @return bool
+     */
+    public static function startsWith($string, $subString, $caseSensitive = true)
+    {
+        if ($subString === '') {
+            return true;
+        }
+
+        if ($caseSensitive === false) {
+            $string    = strtolower($string);
+            $subString = strtolower($subString);
+        }
+
+        return (strpos($string, $subString) === 0);
+    }
+
+    /**
+     * Check if a given string ends with a given
+     * substring.
+     *
+     * @param string $string
+     * @param string $subString
+     * @param bool $caseSensitive
+     *
+     * @return bool
+     */
+    public static function endsWith($string, $subString, $caseSensitive = true)
+    {
+        if ($subString === '') {
+            return true;
+        }
+
+        if ($caseSensitive === false) {
+            $string    = strtolower($string);
+            $subString = strtolower($subString);
+        }
+
+        return strrpos($string, $subString) === (strlen($string) - strlen($subString));
+    }
+
 }
